@@ -19,7 +19,20 @@ namespace Treino_Git_GitHub
 
         private void btnAug_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
+            int lastNumber = 0;
+            int currentNumber = 1;
+            int auxNum = 0;
+            string result = "0";
+            while (i < 9)
+            {
+                auxNum = currentNumber;
+                result += $";{currentNumber}";
+                currentNumber += lastNumber;
+                lastNumber = auxNum;
+                i++;
+            }
+            MessageBox.Show(result);
         }
 
         private void btnCarlos_Click(object sender, EventArgs e)
