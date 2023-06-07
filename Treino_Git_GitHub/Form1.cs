@@ -57,16 +57,19 @@ namespace Treino_Git_GitHub
 
         private void btnGui_Click(object sender, EventArgs e)
         {
-            // TODO: gerar popup com os 10 primeiros numeros da sequencia de fibonacci separados por ;
             int i = 0;
             int lastNumber = 0;
             int currentNumber = 1;
-            while (i < 10)
+            string strTotal = $"{lastNumber};{currentNumber};";
+            while (i < 8)
             {
-                MessageBox.Show(currentNumber.ToString());
+                //MessageBox.Show(currentNumber.ToString());
                 currentNumber += lastNumber;
-                lastNumber *= currentNumber;
+                lastNumber = currentNumber - lastNumber;
+                strTotal += currentNumber.ToString() + ";";
+                i++;
             }
+            MessageBox.Show(strTotal);
         }
 
         private void btnConflito1_Click(object sender, EventArgs e)
