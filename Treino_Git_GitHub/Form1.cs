@@ -28,13 +28,17 @@ namespace Treino_Git_GitHub
             int i = 0;
             int lastNumber = 0;
             int currentNumber = 1;
+            int nextNumber;
+            string fibo = "";
             while (i < 10)
             {
-                MessageBox.Show(currentNumber.ToString());
-                currentNumber += lastNumber;
-                lastNumber *= currentNumber;
+                nextNumber = lastNumber + currentNumber;
+                fibo += currentNumber.ToString() + ";";
+                lastNumber = currentNumber;
+                currentNumber = nextNumber;
+                i++;
             }
-
+            MessageBox.Show(fibo);
         }
 
         private void btnGui_Click(object sender, EventArgs e)
